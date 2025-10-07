@@ -1,5 +1,5 @@
 import { TagPill } from "./TagPill";
-
+import Cactus from "../../assets/Cactus.jpg";
 interface MinimalBlogCardProps {
   title: string;
   description?: string;
@@ -9,7 +9,7 @@ interface MinimalBlogCardProps {
 export const MinimalBlogCard = ({
   title,
   description = "From minimalist sculptures to minimalist paintings, this blog will inspire you to appreciate the beauty that lies in simplicity.",
-  imageSrc,
+  imageSrc = Cactus,
 }: MinimalBlogCardProps) => {
   return (
     <div>
