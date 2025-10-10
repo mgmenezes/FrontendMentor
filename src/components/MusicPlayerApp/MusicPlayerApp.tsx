@@ -51,12 +51,19 @@ export const MusicPlayerApp: React.FC = () => {
   const [duration, setDuration] = useState(0);
 
   const handleNextSongOrPause = () => {
-    setCurrentSong(songs[songs.indexOf(currentSong) + 1]);
+    const currentSongIndex = songs.indexOf(currentSong);
+
+    const nextIndex =
+      currentSongIndex === songs.length - 1 ? 0 : currentSongIndex + 1;
+    setCurrentSong(songs[nextIndex]);
+
     setIsPlaying(true);
   };
 
   const handlePreviousSong = () => {
-    setCurrentSong(songs[songs.indexOf(currentSong) - 1]);
+    const currentIndex = songs.indexOf(currentSong);
+    const prevIndex = (currentIndex - 1 + songs.length) % songs.length; // Vai pro final
+    setCurrentSong(songs[prevIndex]);
     setIsPlaying(true);
   };
   const handlePlay = () => {
