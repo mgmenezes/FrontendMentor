@@ -1,7 +1,6 @@
 interface ProgressBarProps {
   duration: string;
   currentTime: string;
-  setCurrentTime: (time: string) => void;
   audioRef: React.RefObject<HTMLAudioElement>;
 }
 

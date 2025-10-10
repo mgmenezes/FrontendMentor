@@ -50,8 +50,6 @@ export const MusicPlayerApp: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [duration, setDuration] = useState(0);
 
-  const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
-
   const handleNextSongOrPause = () => {
     setCurrentSong(songs[songs.indexOf(currentSong) + 1]);
     setIsPlaying(true);
@@ -135,7 +133,6 @@ export const MusicPlayerApp: React.FC = () => {
           audioRef={audioRef as React.RefObject<HTMLAudioElement>}
           duration={formatTime(duration)}
           currentTime={formatTime(currentTime)}
-          setCurrentTime={setCurrentTime}
         />
         <div className="music-player-app-controls">
           <button
