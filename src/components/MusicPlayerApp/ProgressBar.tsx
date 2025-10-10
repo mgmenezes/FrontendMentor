@@ -23,6 +23,14 @@ export const ProgressBar = ({
     }
   };
 
+  const timeToSeconds = (time: string): number => {
+    if (!time || time === "00:00") return 0;
+    const parts = time.split(":");
+    const mins = parseInt(parts[0]) || 0;
+    const secs = parseInt(parts[1]) || 0;
+    return mins * 60 + secs;
+  };
+
   return (
     <div className="progress-bar">
       <div className="progress-bar-time">
@@ -33,8 +41,8 @@ export const ProgressBar = ({
       </div>
       <input
         min={0}
-        max={parseFloat(duration)}
-        value={parseFloat(currentTime)}
+        max={timeToSeconds(duration)}
+        value={timeToSeconds(currentTime)}
         onChange={handleSliderChange}
         style={{
           height: "6px",
