@@ -4,11 +4,14 @@
 
 
 
+
 * {
   font-family: 'Sora';
    font-family: 'Cascadia Code'; 
   font-family: 'Poppins';
 }
+
+
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -17,7 +20,11 @@
 
   color-scheme: light dark;
   color: #FAFAF9;
-  background-color: #e6e6e6;
+
+  background-image: url('./assets/musicPlayer/gradient-bg.jpg');
+  background-size: 100% 100%;
+  background-attachment: fixed; /* opcional: efeito mais suave ao rolar */
+  animation: animated-bg 10s ease infinite;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,7 +34,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #c93b76;
   text-decoration: inherit;
 }
 a:hover {
